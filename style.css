@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Fira Sans', sans-serif;
+}
+header {
+    font-size: 3em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: 200;
+}
+aside {
+    font-size: .8em;
+    text-align: center;
+}
+footer {
+    font-size: .8em;
+    text-align: center;
+}
+#controls {
+    margin: 0 auto;
+    max-width: 480px;
+    text-align: center;
+}
+#timer {
+    box-shadow:0 0 1em #CCC;
+}
