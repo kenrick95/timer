@@ -3,18 +3,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     var timer = new Timer(),
         frameId = null,
-        // element = document.getElementById("svg-text"),
-        canvas = document.getElementById("timer"),
-        ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    ctx.font = '10em "Fira Sans", sans-serif';
-    ctx.fillStyle = "#111";
+        element = document.getElementById("svg-text");
+        // canvas = document.getElementById("timer"),
+        //ctx = canvas.getContext('2d');
+    //canvas.width = window.innerWidth;
+    //ctx.font = '10em "Fira Sans", sans-serif';
+    //ctx.fillStyle = "#111";
     function show(timer) {
         // Profiling performance: this is the bottleneck, updating DOM is really costly
-        // element.textContent = timer.current;
+        element.textContent = timer.current;
         // updating SVG is fast enough, although some performance drop occurs
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillText(timer.current, 0, canvas.height);
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // ctx.fillText(timer.current, 0, canvas.height);
     }
     function tick(timer) {
         // console.log(timer);
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
         show(timer);
     });
     window.addEventListener("resize", function () {
-        canvas.width = window.innerWidth;
-        ctx.font = '100pt "Fira Sans", sans-serif';
+        //canvas.width = window.innerWidth;
+        //ctx.font = '100pt "Fira Sans", sans-serif';
         show(timer);
     });
 }, false);
