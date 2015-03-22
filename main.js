@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         canvas = document.getElementById("timer"),
         ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
-    ctx.font = '10em "Fira Sans", sans-serif';
+    ctx.font = parseInt(window.innerWidth / 10, 10) + 'px monospace'; // font size should be calculated from screen size
     ctx.fillStyle = "#111";
     function pad(number, digits) {
         if (digits === undefined || digits < 2) {
@@ -37,8 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // element.textContent = timer.current;
         // updating SVG is fast enough, although some performance drop occurs
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillText(parse(timer.current), 0, canvas.height);
+        ctx.fillText(parse(timer.current), 170 * window.innerWidth / 1366, canvas.height - 10);
     }
+    ctx.fillText(parse(0), 170 * window.innerWidth / 1366, canvas.height - 10);
     function tick(timer) {
         // console.log(timer);
         show(timer);
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     window.addEventListener("resize", function () {
         canvas.width = window.innerWidth;
-        ctx.font = '100pt "Fira Sans", sans-serif';
+        ctx.font = parseInt(window.innerWidth / 10, 10) + 'px monospace'; // font size should be calculated from screen size
         show(timer);
     });
 }, false);
